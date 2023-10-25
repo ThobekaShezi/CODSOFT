@@ -15,8 +15,8 @@ def main_function():
             print(f"Task '{task}' added successfully!")
         elif user_input == "2":
             print("Tasks:")
-            for index, task in enumerate(tasks, start=1):
-                print(f"{index}. {task}")
+            for i, task in enumerate(tasks, start=1):
+                print(f"{i}. {task}")
         elif user_input == "3":
             tasks.clear()
             print("All tasks cleared.")
