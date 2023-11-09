@@ -50,7 +50,21 @@ for button in buttons:
         action = calculate
     else:
         action = lambda x=button: Update_after_button_click(x)
-    tk.Button(root, text=button, width=5, height=2, font=("Arial", 18), command=action).grid(row=row_val, column=col_val)
+
+    # adding different colors for my buttons
+    if button.isdigit() or button in ['+', '-', '*', '/']:
+        bg_color = "lightgrey"
+        fg_color = "black"
+    elif button == 'C':
+        bg_color = "red"
+        fg_color = "white"
+    elif button == 'R':
+        bg_color = "yellow"
+        fg_color = "Black"
+    else:
+        bg_color = "lightgreen"
+        fg_color = "black"
+    tk.Button(root, text=button, width=5, height=2, font=("Arial", 18), command=action, bg=bg_color, fg=fg_color).grid(row=row_val, column=col_val)
     col_val += 1
     if col_val > 3:
         col_val = 0
